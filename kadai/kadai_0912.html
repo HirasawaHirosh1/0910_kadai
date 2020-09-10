@@ -208,7 +208,7 @@ $("#save").on("click",function(){
 
 // セーブ時の挙動その４　過去履歴
 $("#save").on("click",function(){
-for(let i=3; i<localStorage.length; i+=7){
+for(let i=0; i<localStorage.length; i++){
     const key   = localStorage.key(i);
     const value = localStorage.getItem(key);
     const html = '<tr><th>'+key+'</th><td>'+value+'</td></tr>';
