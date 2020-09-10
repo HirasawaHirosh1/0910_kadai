@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>結婚相手スクリーニングシート</title>
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/kadai_0912.css">
+</head>
+<body>
+<header>
+<h1>結婚相手スクリーニングシート</h1>
+
+</header>
+<main>
+    
+    <form method="get" action="form_autocomplete.html" novalidate>
+    <p>あなたが結婚相手に求める優先順位を教えてください？</p>
+    <div class="cp_iptxt">
+        <input type="text" placeholder="第1位" autocomplete="on" list="mylist1" id="priority1">
+        <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+     <datalist id="mylist1">
+        <option value="性格"></option>
+        <option value="容姿"></option>
+        <option value="体形"></option>
+        <option value="年収"></option>
+        <option value="家事能力"></option>
+        <option value="学歴"></option>
+        <option value="年齢"></option>
+    </div>
+
+    <div class="cp_iptxt">
+        <input type="text" placeholder="第2位" autocomplete="on" list="mylist2" id="priority2">
+        <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+     <datalist id="mylist2">
+        <option value="性格"></option>
+        <option value="容姿"></option>
+        <option value="体形"></option>
+        <option value="年収"></option>
+        <option value="家事能力"></option>
+        <option value="学歴"></option>
+        <option value="年齢"></option>
+    </div>
+
+    <div class="cp_iptxt">
+        <input type="text" placeholder="第3位" autocomplete="on" list="mylist3" id="priority3">
+        <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+     <datalist id="mylist3">
+        <option value="性格"></option>
+        <option value="容姿"></option>
+        <option value="体形"></option>
+        <option value="年収"></option>
+        <option value="家事能力"></option>
+        <option value="学歴"></option>
+        <option value="年齢"></option>
+    </div>
+
+    <div class="cp_iptxt">
+        <input type="text" placeholder="第4位" autocomplete="on" list="mylist4" id="priority4">
+        <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+     <datalist id="4">
+        <option value="性格"></option>
+        <option value="容姿"></option>
+        <option value="体形"></option>
+        <option value="年収"></option>
+        <option value="家事能力"></option>
+        <option value="学歴"></option>
+        <option value="年齢"></option>
+    </div>
+
+    <div class="cp_iptxt">
+        <input type="text" placeholder="第5位" autocomplete="on" list="mylist5" id="priority5">
+        <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+     <datalist id="mylist5">
+        <option value="性格"></option>
+        <option value="容姿"></option>
+        <option value="体形"></option>
+        <option value="年収"></option>
+        <option value="家事能力"></option>
+        <option value="学歴"></option>
+        <option value="年齢"></option>
+    </div>
+
+    <div class="cp_iptxt">
+        <input type="text" placeholder="第6位" autocomplete="on" list="mylist6" id="priority6">
+        <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+     <datalist id="mylist6">
+        <option value="性格"></option>
+        <option value="容姿"></option>
+        <option value="体形"></option>
+        <option value="年収"></option>
+        <option value="家事能力"></option>
+        <option value="学歴"></option>
+        <option value="年齢"></option>
+    </div>
+
+    <div class="cp_iptxt">
+        <input type="text" placeholder="第7位" autocomplete="on" list="mylist7" id="priority7">
+        <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+     <datalist id="mylist7">
+        <option value="性格"></option>
+        <option value="容姿"></option>
+        <option value="体形"></option>
+        <option value="年収"></option>
+        <option value="家事能力"></option>
+        <option value="学歴"></option>
+        <option value="年齢"></option>
+    </div>
+
+</form>
+
+<div class="cp_iptxt">
+    <input type="text" placeholder="相手のお名前" autocomplete="on" id="name">
+    </div>
+
+ <div class="questions">
+    <p>経路</p>
+    <input type="radio" name="Question1" id="test" >友人紹介
+    <input type="radio" name="Question1" class="test">合コン
+    <input type="radio" name="Question1" class="test">仕事関連
+    <input type="radio" name="Question1" class="test">Tinder
+    <input type="radio" name="Question1" class="test">その他
+
+    <p>性格</p>
+    <select id="number"><option value="0">-</option></select>
+
+    <p>容姿</p>
+    <select id="number2"><option value="0">-</option></select>
+
+    <p>体形</p>
+    <select id="number3"><option value="0">-</option></select>
+
+    <p>年収</p>
+    <select id="number4"><option value="0">-</option></select>
+
+    <p>年収</p>
+    <select id="number5"><option value="0">-</option></select>
+
+    <p>家事能力</p>
+    <select id="number6"><option value="0">-</option></select>
+
+    <p>学歴</p>
+    <select id="number7"><option value="0">-</option></select>
+
+    <p>Total score：</p><p id="score"> </p>
+    <p>Rank：</p><p id="rank"> </p>
+
+
+<p>その他特記事項</p>
+<textarea id="number8"></textarea>
+
+<table id="list">
+    <!-- ここに追加データが挿入される -->
+    </table>
+
+<input type="submit" id="save">
+</main>
+
+<script>
+// const priority = document.getElementById("priority1");
+
+// if(!options[i].selected){
+//     $('#mylist2').children('[value="性格"]').remove();
+// }
+
+for (var i = 1; i <= 5; i++) {
+    $('#number').append('<option value="' + i + '">' + i + '</option>');
+    $('#number2').append('<option value="' + i + '">' + i + '</option>');
+    $('#number3').append('<option value="' + i + '">' + i + '</option>');
+    $('#number4').append('<option value="' + i + '">' + i + '</option>');
+    $('#number5').append('<option value="' + i + '">' + i + '</option>');
+    $('#number6').append('<option value="' + i + '">' + i + '</option>');
+    $('#number7').append('<option value="' + i + '">' + i + '</option>');}
+
+// セーブ時の挙動その１　合計点数表示
+    $("#save").on("click",function(){
+    var score = document.getElementById('score')
+    const number = parseInt(document.querySelector("#number").value);
+    const number2 = parseInt(document.querySelector("#number2").value);
+    const number3 = parseInt(document.querySelector("#number3").value);
+    const number4 = parseInt(document.querySelector("#number4").value);
+    const number5 = parseInt(document.querySelector("#number5").value);
+    const number6 = parseInt(document.querySelector("#number6").value);
+    const number7 = parseInt(document.querySelector("#number7").value);
+    const total = number + number2 + number3 + number4 + number5 + number6 + number7;
+    score.innerHTML =  total;  })
+
+
+// セーブ時の挙動その２　ランク判定
+$("#save").on("click",function(){
+    var rank = document.getElementById("rank")
+    const number = parseInt(document.querySelector("#number").value);
+    const number2 = parseInt(document.querySelector("#number2").value);
+    const number3 = parseInt(document.querySelector("#number3").value);
+    const number4 = parseInt(document.querySelector("#number4").value);
+    const number5 = parseInt(document.querySelector("#number5").value);
+    const number6 = parseInt(document.querySelector("#number6").value);
+    const number7 = parseInt(document.querySelector("#number7").value);
+    const total = number + number2 + number3 + number4 + number5 + number6 + number7;
+    if (total >= 30) {
+        rank.innerHTML =  "A";
+ }else if(total >= 25 && total <=29){
+        rank.innerHTML =  "B";
+ }else if(total >= 20 && total <=24){
+        rank.innerHTML =  "C";
+ }else if(total <= 19){
+        rank.innerHTML =  "D";
+ }
+ const name =$("#name").val();
+ localStorage.setItem(name,rank.innerHTML);
+
+    })
+
+// セーブ時の挙動その３　ローカルストレージへの保存
+    $("#save").on("click",function(){
+    const uni = $("#uni").val();
+    const name =$("#name").val();
+    const number = $("#number").val();
+    const number2 = $("#number2").val();
+    const number3 = $("#number3").val();
+    const number4 = $("#number4").val();
+    const number5 = $("#number5").val();
+    const number6 = $("#number6").val();
+    const number7 = $("#number7").val();
+    const number8 = $("#number8").val();
+    
+    // localStorage.setItem(name+'9',uni);
+    localStorage.setItem(name+'1',number);
+    localStorage.setItem(name+'2',number2);
+    localStorage.setItem(name+'3',number3);
+    localStorage.setItem(name+'4',number4);
+    localStorage.setItem(name+'5',number5);
+    localStorage.setItem(name+'6',number6);
+    localStorage.setItem(name+'7',number7);
+    localStorage.setItem(name+'8',number8);
+    
+});
+
+// セーブ時の挙動その４　過去履歴
+$("#save").on("click",function(){
+for(let i=7; i<localStorage.length; i+=9){
+    const key   = localStorage.key(i);
+    const value = localStorage.getItem(key);
+    const html = '<tr><th>'+key+'</th><td>'+value+'</td></tr>';
+    $("#list").append(html);
+}
+console.log(localStorage)
+});
+
+
+    </script>
+
+
+
+    
+
+
+<!-- // for (var i = 1; i <= 5; i++) {
+//     $('#number').append('<option value="' + i + '">' + i + '</option>'); }
+// $("#save").on("click",function(){
+//     const key = $("#key").val();
+//     const value = $("#memo").val();
+//     localStorage.setItem(key,value);
+//     const html = '<tr><th>'+key+'</th><td>'+value+'</td></tr>';
+//     $("#list").append(html);
+// });
+ -->
+
+<!-- 
+// var obj = {
+//      data01:"hoge",
+//      deta02:"fuga"
+// };
+ 
+// localStorage.setItem("testdata", JSON.stringify(obj));
+//テスト用
+// $("#save").on("click",function(){
+// var obj ={
+// title:$("#name").val()
+// value:$("#uni").val()}
+// localStorage.setItem(STORAGE_KEY, JSON.stringify(data)
+
+// });
+
+
+
+//保存 クリックイベント
+// $("#save").on("click",function(){
+//     const title = $("#key").val();
+//     const value = $("#memo").val();
+
+//     //配列へ追加
+//     data.push({title, value});
+
+//     //配列をローカルストレージへ保存
+//     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+// }); -->
+
+
+
+ </script>
+<footer><small>G's</small></footer>
+</body>
+</html>
